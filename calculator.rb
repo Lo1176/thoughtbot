@@ -22,7 +22,7 @@ describe Calculator do
 
       expect(calc.add(4, 8)).to eq(12)
     end
-    it "returns the sum of two different arguments" do
+    it 'returns the sum of two different arguments' do
       calc = Calculator.new
 
       expect(calc.add(1, 2)).to eq(3)
