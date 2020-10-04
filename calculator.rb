@@ -7,11 +7,12 @@ class Calculator
   end
 
   def factorial(n)
-    if n.zero?
-      1
-    else
-      (1..n).reduce(:*)
-    end
+    # if n.zero?
+    #   1
+    # else
+    #   (1..n).reduce(:*)
+    # end
+    n.zero? ? 1 : (1..n).reduce(:*)
   end
 end
 
