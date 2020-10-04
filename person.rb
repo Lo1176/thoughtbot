@@ -25,7 +25,7 @@ class Person
   # implement your behavior here
   def full_name
     # clean_name
-    # "#{@first_name} #{@middle_name} #{@last_name}"
+    "#{@first_name} #{@middle_name} #{@last_name}"
     [first_name, middle_name, last_name].compact.join(' ')
   end
 
@@ -49,34 +49,34 @@ class Person
 end
 
 RSpec.describe Person do
-      person_with_middle_name = Person.new(
-        first_name: 'John',
-        middle_name: 'Hecttor',
-        last_name: 'Proust'
-      )
-      person_without_mn = Person.new(
-        first_name: 'Robert',
-        last_name: 'Plant'
-      )
-  describe "#full_name" do
-    it "concatenates first name, middle name, and last name with spaces" do
-      expect(person_with_middle_name.full_name).to eq('John Hecttor Proust')
+  person_with_middle_name = Person.new(
+    first_name: 'John',
+    middle_name: 'Hector',
+    last_name: 'Proust'
+  )
+  person_without_mn = Person.new(
+    first_name: 'Robert',
+    last_name: 'Plant'
+  )
+  describe '#full_name' do
+    it 'concatenates first name, middle name, and last name with spaces' do
+      expect(person_with_middle_name.full_name).to eq('John Hector Proust')
     end
-    it "does not add extra spaces if middle name is missing" do
+    it 'does not add extra spaces if middle name is missing' do
       expect(person_without_mn.full_name).to eq('Robert Plant')
     end
   end
 
-  describe "#full_name_with_middle_initial" do
-    it "concatenates first name, middle name initial, and last name with spaces" do
+  describe '#full_name_with_middle_initial' do
+    it 'concatenates first name, middle name initial, and last name with spaces' do
       expect(person_with_middle_name.full_name_with_middle_initial).to eq('John H Proust')
 
       expect(person_without_mn.full_name_with_middle_initial).to eq('Robert Plant')
     end
   end
 
-  describe "#initials" do
-    it "return all initials. If the middle name is missing, the initials should only have two characters." do
+  describe '#initials' do
+    it 'return all initials. If the middle name is missing, the initials should only have two characters.' do
       expect(person_with_middle_name.initials).to eq('J H P')
 
       expect(person_without_mn.initials).to eq('R P')
